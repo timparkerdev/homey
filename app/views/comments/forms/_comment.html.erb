@@ -1,0 +1,13 @@
+<%= form_with model: @comment do |form| %>
+  <%= form.hidden_field :commentable_id, value: @comment.commentable_id %>
+  <%= form.hidden_field :commentable_type, value: @comment.commentable_type %>
+
+  <div class="overflow-hidden rounded-lg pb-12 outline -outline-offset-1 outline-gray-300 focus-within:outline focus-within:-outline-offset-2 focus-within:outline-indigo-600">
+    <label for="comment" class="sr-only">Add your comment</label>
+    <%= form.textarea :content, size: "70x2", placeholder: 'Add your comment', class: "block w-full resize-none bg-transparent px-3 py-1.5 text-base text-gray-900 placeholder:text-gray-400 focus:outline focus:outline-0 sm:text-sm/6" %>
+  </div>
+
+  <div class="absolute bottom-0 flex justify-between py-2 pl-3 pr-2">
+    <button type="submit" class="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">Comment</button>
+  </div>
+<% end %>
