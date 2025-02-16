@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project: one
+  auditable: one
+  auditable_type: Auditable
+
+two:
+  project: two
+  auditable: two
+  auditable_type: Auditable

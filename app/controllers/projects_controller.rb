@@ -42,19 +42,7 @@ class ProjectsController < ApplicationController
   private
 
   def build_project_history(project)
-    comments = project.comments
-
-    # TODO: include audits here
-    # TODO: make sure to order by created_at
-    # TODO: move to a service class .. ?
-
-    comments.map do |comment|
-      {
-        type: 'comment',
-        content: comment.content,
-        created_at: comment.created_at
-      }
-    end
+     ProjectHistory.call(project, project.comments, project.audits)
   end
 
 

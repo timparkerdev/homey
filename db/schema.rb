@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_02_16_110039) do
+ActiveRecord::Schema[8.0].define(version: 2025_02_16_115539) do
+  create_table "audits", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "auditable_type", null: false
+    t.integer "auditable_id", null: false
+    t.string "action"
+    t.json "raw_changes"
+    t.index ["auditable_type", "auditable_id"], name: "index_audits_on_auditable"
+  end
+
   create_table "comments", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
