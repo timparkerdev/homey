@@ -7,3 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+ProjectStatus.find_or_create_by!(name: 'Pending', color: 'blue')
+ProjectStatus.find_or_create_by!(name: 'In Progress', color: 'yellow')
+ProjectStatus.find_or_create_by!(name: 'Blocked', color: 'red')
+ProjectStatus.find_or_create_by!(name: 'Complete', color: 'green')

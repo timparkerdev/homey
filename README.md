@@ -1,24 +1,11 @@
-# README
+hi, I've included some details on brief and explanation on the "dashboard" page of the app :)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Setup
 
-Things you may want to cover:
+Requires `ruby 3.3.5`
 
-* Ruby version
+```
+rails db:seed
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+./bin/dev
+```
