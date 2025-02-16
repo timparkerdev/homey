@@ -23,7 +23,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
 
     if @project.save
-      redirect_to projects_path
+      redirect_to project_path(@project)
     else
       render :new, status: :unprocessable_entity
     end
@@ -33,7 +33,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
 
     if @project.update(project_params)
-      redirect_to projects_path
+      redirect_to project_path(@project)
     else
       render :edit, status: :unprocessable_entity
     end

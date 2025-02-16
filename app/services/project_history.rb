@@ -23,7 +23,7 @@ class ProjectHistory
     displayable_audits = filtered_audits.map { |audit| audit_to_hash(audit) }
     displayable_comments = comments.map { |comment| comment_to_hash(comment) }
 
-    (displayable_audits + displayable_comments).sort_by { |k| k["created_at"] }.reverse
+    (displayable_audits + displayable_comments).sort_by { |k| k[:created_at] }
   end
 
   private
@@ -56,7 +56,9 @@ class ProjectHistory
 
       attribute_change_text = change_to_text(audit, attribute)
 
-      "#{ATTRIBUTE_NAME_MAPPING[attribute.to_sym]} was changed to #{attribute_change_text}"
+      return "Project was created" if audit.action == 'create'
+
+      "#{ATTRIBUTE_NAME_MAPPING[attribute.to_sym]} was changed #{attribute_change_text}"
     end.compact.join(', ')
   end
 

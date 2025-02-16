@@ -6,14 +6,22 @@ class Project < ApplicationRecord
 
   validates :name, presence: true
 
-  after_save :audit_project
+  after_create :audit_project_created
+  after_update :audit_project_updated
 
-  def audit_project
+  def audit_project_created
     Audit.create(
       auditable: self,
-      action: self.id_changed? ? 'create' : 'update',
+      action: 'create',
       raw_changes: self.previous_changes
     )
   end
 
+  def audit_project_updated
+    Audit.create(
+      auditable: self,
+      action: 'update',
+      raw_changes: self.previous_changes
+    )
+  end
 end

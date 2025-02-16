@@ -1,8 +1,19 @@
-<div class="bg-white py-24 sm:py-32">
+<div class="bg-white pt-12">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div class="mx-auto max-w-2xl lg:mx-0">
       <h2 class="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">👋 hi</h2>
-      <p class="mt-6 text-lg/8 text-gray-600">.</p>
+      <p class="mt-6 text-lg/8 text-gray-600">Welcome to my sample app for the Homey development task. I have built this sample app using Rails 8 + tailwind - I chose not to use any gems to provide any functionality, but in an actual project it might be beneficial to do so (particuarly around audits and comments).</p>
+      <p class="mt-6 text-lg/8 text-gray-600">I chose not to introduce a User / authentication model to save time. The UI is mostly taken from TailwindUI.</p>
+      <p class="mt-6 text-lg/8 text-gray-600">I'm pretty happy with my solution, but if had more time might reconsider improving the following:</p>
+      <ul>
+        <li class="mt-2 text-lg/8 text-gray-600">• Adding some tests - particularly the ProjectHistory service class to ensure correct formatting of the audit logs. Some nice high level feature tests would be good to test comment posting, and project editing.</li>
+        <li class="mt-2 text-lg/8 text-gray-600">• A more thoughtful approach to partials, in particular shared buttons, layouts etc. This would likely form a wider Design System, to ensure UI code is not duplicated across views.</li>
+        <li class="mt-2 text-lg/8 text-gray-600">• In a real project, we would need to consider user authentication, and authorisation.</li>
+      <ul>
+      <p class="mt-6 text-lg/8 text-gray-600">I hope you enjoy reviewing my solution, and I look forward to hearing your feedback.</p>
+      <p class="mt-6 text-lg/8 text-gray-600">Many thanks,</p>
+      <p class="mt-2 text-lg/8 text-gray-600">Tim Parker</p>
+      <p class="mt-1 text-lg/8 text-gray-600"><a href="https://docs.google.com/document/d/100rpsXKzZDSFuxzy9cYptSI-vD_YeouzHjuP1zZYOV8/edit?usp=sharing">CV</a></p>
     </div>
   </div>
 </div>
@@ -13,6 +24,8 @@
       <div class="lg:col-span-5">
         <h2 class="text-pretty text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">Brief</h2>
         <p class="mt-4 text-pretty text-base/7 text-gray-600">Presented here are some questions I would ask about the brief. For most of these, I've assumed an agile approach to delivery, whereby the focus is on shipping a usable MVP, which can be expanded on easily 😊.</p>
+        <p class="mt-4 text-pretty text-base/7 text-gray-600">Given this conversation, I have chosen to make the project status dynamic (database based) from the start. This is not a particuarly difficult thing to add now, but would be more difficult to migrate to in the future, so is a complexity probably worth adding at the beginning.</p>
+        <p class="mt-4 text-pretty text-base/7 text-gray-600">Given the answer to <strong>What other things might we want to show in the feed?</strong> I put a bit more effort into the ProjectHistory class, to allow it to be customisable to easily add additional attributes into the feed in the future.</p>
       </div>
       <div class="mt-10 lg:col-span-7 lg:mt-0">
         <dl class="space-y-10">

@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
     comment = Comment.new(comment_params)
 
     if comment.save
-      redirect_to edit_project_path(comment.commentable_id)
+      redirect_to project_path(comment.commentable_id)
     else
       redirect_to edit_project_path(comment.commentable_id), status: :unprocessable_entity
     end
